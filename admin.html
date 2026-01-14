@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Shoxruz Yakudza</title>
+    <link rel="stylesheet" href="admin-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Login Modal -->
+    <div id="loginModal" class="login-modal active">
+        <div class="login-container">
+            <div class="login-header">
+                <div class="login-logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <h2>ADMIN <span class="yakudza">PANEL</span></h2>
+                </div>
+                <p>Shoxruz Yakudza saytini boshqarish</p>
+            </div>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="username">Foydalanuvchi nomi</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="username" name="username" placeholder="admin" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Parol</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="••••••••" required>
+                        <button type="button" class="toggle-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" id="rememberMe">
+                        <span class="checkmark"></span>
+                        Meni eslab qol
+                    </label>
+                </div>
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Kirish
+                </button>
+                <div class="login-help">
+                    <p>Demo: admin / yakudza2024</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="adminDashboard" class="admin-dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="admin-logo">
+                    <i class="fas fa-gamepad"></i>
+                    <span>YAKUDZA <small>ADMIN</small></span>
+                </div>
+                <button class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item active">
+                        <a href="#dashboard" class="nav-link" data-section="dashboard">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#content" class="nav-link" data-section="content">
+                            <i class="fas fa-edit"></i>
+                            <span>Kontent</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#stats" class="nav-link" data-section="stats">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Statistika</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#achievements" class="nav-link" data-section="achievements">
+                            <i class="fas fa-trophy"></i>
+                            <span>Yutuqlar</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#gallery" class="nav-link" data-section="gallery">
+                            <i class="fas fa-images"></i>
+                            <span>Galereya</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#messages" class="nav-link" data-section="messages">
+                            <i class="fas fa-envelope"></i>
+                            <span>Xabarlar</span>
+                            <span class="badge">5</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#analytics" class="nav-link" data-section="analytics">
+                            <i class="fas fa-analytics"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#settings" class="nav-link" data-section="settings">
+                            <i class="fas fa-cog"></i>
+                            <span>Sozlamalar</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=40&h=40&fit=crop&crop=face" alt="Admin">
+                    <div class="user-details">
+                        <span class="user-name">Shoxruz</span>
+                        <span class="user-role">Administrator</span>
+                    </div>
+                </div>
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="page-title">Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <button class="action-btn" title="Yangilash">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                        <button class="action-btn" title="Bildirishnomalar">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-dot"></span>
+                        </button>
+                        <button class="action-btn" title="Saytni ko'rish" onclick="window.open('index.html', '_blank')">
+                            <i class="fas fa-external-link-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-area">
+                <!-- Dashboard Section -->
+                <section id="dashboard-section" class="content-section active">
+                    <div class="stats-overview">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>15,847</h3>
+                                <p>Kunlik ko'rishlar</p>
+                                <span class="stat-change positive">+12.5%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>2,847</h3>
+                                <p>Faol foydalanuvchilar</p>
+                                <span class="stat-change positive">+8.2%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>127</h3>
+                                <p>Yangi xabarlar</p>
+                                <span class="stat-change negative">-3.1%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>89%</h3>
+                                <p>Win Rate</p>
+                                <span class="stat-change positive">+2.1%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h3>Tezkor Harakatlar</h3>
+                            </div>
+                            <div class="quick-actions">
+                                <button class="quick-action-btn" data-action="add-post">
+                                    <i class="fas fa-plus"></i>
+                                    <span>Yangi Post</span>
+                                </button>
+                                <button class="quick-action-btn" data-action="update-stats">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Statistika Yangilash</span>
+                                </button>
+                                <button class="quick-action-btn" data-action="add-achievement">
+                                    <i class="fas fa-medal"></i>
+                                    <span>Yutuq Qo'shish</span>
+                                </button>
+                                <button class="quick-action-btn" data-action="upload-media">
+                                    <i class="fas fa-upload"></i>
+                                    <span>Media Yuklash</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h3>So'nggi Faoliyat</h3>
+                                <button class="card-action">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-trophy"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p>Yangi yutuq qo'shildi: "World Championship 2024"</p>
+                                        <span class="activity-time">2 soat oldin</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-chart-bar"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p>Statistika yangilandi: Kill count 2.5M+</p>
+                                        <span class="activity-time">5 soat oldin</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-image"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p>Galereyaga 3 ta yangi rasm qo'shildi</p>
+                                        <span class="activity-time">1 kun oldin</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Content Management Section -->
+                <section id="content-section" class="content-section">
+                    <div class="section-header">
+                        <h2>Kontent Boshqaruvi</h2>
+                        <button class="btn btn-primary" onclick="openContentEditor()">
+                            <i class="fas fa-plus"></i>
+                            Yangi Kontent
+                        </button>
+                    </div>
+
+                    <div class="content-tabs">
+                        <button class="tab-btn active" data-tab="hero">Hero Section</button>
+                        <button class="tab-btn" data-tab="about">Haqimda</button>
+                        <button class="tab-btn" data-tab="social">Ijtimoiy Tarmoqlar</button>
+                    </div>
+
+                    <div class="tab-content active" id="hero-tab">
+                        <div class="editor-card">
+                            <h3>Hero Section</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Asosiy Sarlavha</label>
+                                    <input type="text" id="heroTitle" value="SHOXRUZ YAKUDZA" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tagline</label>
+                                    <input type="text" id="heroSubtitle" value="Professional PUBG Player & Content Creator" class="form-control">
+                                </div>
+                                <div class="form-group full-width">
+                                    <label>Tavsif</label>
+                                    <textarea id="heroDescription" class="form-control" rows="3">Professional PUBG oyinchisi va kontent yaratuvchi</textarea>
+                                </div>
+                            </div>
+                            <button class="btn btn-success" onclick="saveHeroContent()">
+                                <i class="fas fa-save"></i>
+                                Saqlash
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="about-tab">
+                        <div class="editor-card">
+                            <h3>Haqimda Bo'limi</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Ism</label>
+                                    <input type="text" id="aboutName" value="Shoxruz Karimov" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Laqab</label>
+                                    <input type="text" id="aboutNickname" value="Yakudza" class="form-control">
+                                </div>
+                                <div class="form-group full-width">
+                                    <label>Biografiya</label>
+                                    <textarea id="aboutBio" class="form-control" rows="5">Men 5 yildan ortiq vaqtdan beri professional PUBG o'ynayman...</textarea>
+                                </div>
+                            </div>
+                            <button class="btn btn-success" onclick="saveAboutContent()">
+                                <i class="fas fa-save"></i>
+                                Saqlash
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="social-tab">
+                        <div class="editor-card">
+                            <h3>Ijtimoiy Tarmoqlar</h3>
+                            <div class="social-links-editor">
+                                <div class="social-link-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <input type="url" placeholder="YouTube URL" class="form-control">
+                                    <button class="btn-remove"><i class="fas fa-trash"></i></button>
+                                </div>
+                                <div class="social-link-item">
+                                    <i class="fab fa-twitch"></i>
+                                    <input type="url" placeholder="Twitch URL" class="form-control">
+                                    <button class="btn-remove"><i class="fas fa-trash"></i></button>
+                                </div>
+                                <div class="social-link-item">
+                                    <i class="fab fa-instagram"></i>
+                                    <input type="url" placeholder="Instagram URL" class="form-control">
+                                    <button class="btn-remove"><i class="fas fa-trash"></i></button>
+                                </div>
+                                <div class="social-link-item">
+                                    <i class="fab fa-telegram"></i>
+                                    <input type="url" placeholder="Telegram URL" class="form-control">
+                                    <button class="btn-remove"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" onclick="addSocialLink()">
+                                <i class="fas fa-plus"></i>
+                                Yangi Link Qo'shish
+                            </button>
+                            <button class="btn btn-success" onclick="saveSocialLinks()">
+                                <i class="fas fa-save"></i>
+                                Saqlash
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Stats Management Section -->
+                <section id="stats-section" class="content-section">
+                    <div class="section-header">
+                        <h2>Statistika Boshqaruvi</h2>
+                        <button class="btn btn-primary" onclick="refreshStats()">
+                            <i class="fas fa-sync-alt"></i>
+                            Yangilash
+                        </button>
+                    </div>
+
+                    <div class="stats-editor">
+                        <div class="stats-grid">
+                            <div class="stat-editor-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-crosshairs"></i>
+                                </div>
+                                <div class="stat-controls">
+                                    <label>Jami Kills</label>
+                                    <input type="number" id="totalKills" value="2547892" class="form-control">
+                                    <button class="btn btn-sm btn-success" onclick="updateStat('kills')">Yangilash</button>
+                                </div>
+                            </div>
+                            <div class="stat-editor-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-crown"></i>
+                                </div>
+                                <div class="stat-controls">
+                                    <label>Chicken Dinners</label>
+                                    <input type="number" id="chickenDinners" value="1547" class="form-control">
+                                    <button class="btn btn-sm btn-success" onclick="updateStat('dinners')">Yangilash</button>
+                                </div>
+                            </div>
+                            <div class="stat-editor-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-percentage"></i>
+                                </div>
+                                <div class="stat-controls">
+                                    <label>Win Rate %</label>
+                                    <input type="number" id="winRate" value="87" class="form-control" max="100">
+                                    <button class="btn btn-sm btn-success" onclick="updateStat('winrate')">Yangilash</button>
+                                </div>
+                            </div>
+                            <div class="stat-editor-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <div class="stat-controls">
+                                    <label>K/D Ratio</label>
+                                    <input type="number" id="kdRatio" value="4.2" step="0.1" class="form-control">
+                                    <button class="btn btn-sm btn-success" onclick="updateStat('kd')">Yangilash</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="advanced-stats">
+                            <h3>Batafsil Statistika</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Jami O'yinlar</label>
+                                    <input type="number" id="totalGames" value="15847" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Top 10 Foizi</label>
+                                    <input type="number" id="top10Rate" value="65" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Eng Uzun Kill (m)</label>
+                                    <input type="number" id="longestKill" value="847" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Headshot Foizi</label>
+                                    <input type="number" id="headshotRate" value="42" class="form-control">
+                                </div>
+                            </div>
+                            <button class="btn btn-success" onclick="saveAdvancedStats()">
+                                <i class="fas fa-save"></i>
+                                Barchasini Saqlash
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Other sections will be added here -->
+                <section id="achievements-section" class="content-section">
+                    <div class="section-header">
+                        <h2>Yutuqlar Boshqaruvi</h2>
+                        <button class="btn btn-primary" onclick="addNewAchievement()">
+                            <i class="fas fa-plus"></i>
+                            Yangi Yutuq
+                        </button>
+                    </div>
+                    <div class="achievements-list">
+                        <!-- Achievement items will be loaded here -->
+                        <p class="text-center">Yutuqlar yuklanmoqda...</p>
+                    </div>
+                </section>
+
+                <section id="gallery-section" class="content-section">
+                    <div class="section-header">
+                        <h2>Galereya Boshqaruvi</h2>
+                        <button class="btn btn-primary" onclick="uploadMedia()">
+                            <i class="fas fa-upload"></i>
+                            Media Yuklash
+                        </button>
+                    </div>
+                    <div class="gallery-manager">
+                        <p class="text-center">Galereya yuklanmoqda...</p>
+                    </div>
+                </section>
+
+                <section id="messages-section" class="content-section">
+                    <div class="section-header">
+                        <h2>Xabarlar</h2>
+                        <button class="btn btn-primary" onclick="markAllRead()">
+                            <i class="fas fa-check-double"></i>
+                            Barchasini O'qilgan Deb Belgilash
+                        </button>
+                    </div>
+                    <div class="messages-list">
+                        <p class="text-center">Xabarlar yuklanmoqda...</p>
+                    </div>
+                </section>
+
+                <section id="analytics-section" class="content-section">
+                    <div class="section-header">
+                        <h2>Analytics</h2>
+                        <div class="date-range-picker">
+                            <input type="date" class="form-control">
+                            <span>dan</span>
+                            <input type="date" class="form-control">
+                            <span>gacha</span>
+                        </div>
+                    </div>
+                    <div class="analytics-dashboard">
+                        <p class="text-center">Analytics yuklanmoqda...</p>
+                    </div>
+                </section>
+
+                <section id="settings-section" class="content-section">
+                    <div class="section-header">
+                        <h2>Sozlamalar</h2>
+                    </div>
+                    <div class="settings-grid">
+                        <div class="settings-card">
+                            <h3>Umumiy Sozlamalar</h3>
+                            <div class="form-group">
+                                <label>Sayt Nomi</label>
+                                <input type="text" value="Shoxruz Yakudza" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Meta Tavsif</label>
+                                <textarea class="form-control" rows="3">Professional PUBG oyinchisi sayt</textarea>
+                            </div>
+                            <button class="btn btn-success">Saqlash</button>
+                        </div>
+                        <div class="settings-card">
+                            <h3>Xavfsizlik</h3>
+                            <div class="form-group">
+                                <label>Parolni O'zgartirish</label>
+                                <input type="password" placeholder="Yangi parol" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Parolni Tasdiqlash</label>
+                                <input type="password" placeholder="Parolni takrorlang" class="form-control">
+                            </div>
+                            <button class="btn btn-warning">Parolni O'zgartirish</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>

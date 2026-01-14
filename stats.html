@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistika - Shoxruz Yakudza</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo" id="adminLogo" style="cursor: pointer; user-select: none;" title="Admin Panel uchun 2 marta bosing">
+                <h2>SHOXRUZ <span class="yakudza">YAKUDZA</span></h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Bosh sahifa</a></li>
+                <li><a href="about.html">Haqida</a></li>
+                <li><a href="stats.html" class="active">Statistika</a></li>
+                <li><a href="achievements.html">Yutuqlar</a></li>
+                <li><a href="gallery.html">Galereya</a></li>
+                <li><a href="contact.html">Aloqa</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">
+                <span class="glitch" data-text="STATISTIKA">STATISTIKA</span>
+            </h1>
+            <p class="page-subtitle">Professional PUBG o'yin ko'rsatkichlari</p>
+        </div>
+    </section>
+
+    <!-- Main Stats -->
+    <section class="stats-main">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card featured">
+                    <div class="stat-icon">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 class="stat-value" data-target="2547892">0</h3>
+                        <p class="stat-name">Jami Kills</p>
+                        <div class="stat-progress">
+                            <div class="progress-bar" data-width="95%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card featured">
+                    <div class="stat-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 class="stat-value" data-target="1547">0</h3>
+                        <p class="stat-name">Chicken Dinners</p>
+                        <div class="stat-progress">
+                            <div class="progress-bar" data-width="87%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card featured">
+                    <div class="stat-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 class="stat-value" data-target="87">0</h3>
+                        <p class="stat-name">Win Rate %</p>
+                        <div class="stat-progress">
+                            <div class="progress-bar" data-width="87%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card featured">
+                    <div class="stat-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 class="stat-value" data-target="4.2">0</h3>
+                        <p class="stat-name">K/D Ratio</p>
+                        <div class="stat-progress">
+                            <div class="progress-bar" data-width="84%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Stats -->
+    <section class="detailed-stats-page">
+        <div class="container">
+            <div class="stats-categories">
+                <div class="category-tabs">
+                    <button class="tab-btn active" data-tab="overall">Umumiy</button>
+                    <button class="tab-btn" data-tab="season">Joriy Mavsum</button>
+                    <button class="tab-btn" data-tab="weapons">Qurollar</button>
+                    <button class="tab-btn" data-tab="maps">Xaritalar</button>
+                    <button class="tab-btn" data-tab="records">Rekordlar</button>
+                </div>
+                
+                <div class="tab-content active" id="overall">
+                    <div class="stats-grid-detailed">
+                        <div class="stat-detail-card">
+                            <h4>Umumiy Statistika</h4>
+                            <div class="stats-table">
+                                <div class="stat-row">
+                                    <span class="stat-label">Jami o'yinlar:</span>
+                                    <span class="stat-value-text">15,847</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Top 10 foizi:</span>
+                                    <span class="stat-value-text">65%</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Eng uzun kill:</span>
+                                    <span class="stat-value-text">847m</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Headshot foizi:</span>
+                                    <span class="stat-value-text">42%</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">O'rtacha damage:</span>
+                                    <span class="stat-value-text">1,247</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stat-detail-card">
+                            <h4>Vaqt Statistikasi</h4>
+                            <div class="stats-table">
+                                <div class="stat-row">
+                                    <span class="stat-label">Jami o'yin vaqti:</span>
+                                    <span class="stat-value-text">2,847 soat</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">O'rtacha o'yin vaqti:</span>
+                                    <span class="stat-value-text">28 daqiqa</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Eng uzun o'yin:</span>
+                                    <span class="stat-value-text">47 daqiqa</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Kunlik o'rtacha:</span>
+                                    <span class="stat-value-text">6.5 soat</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="season">
+                    <div class="season-stats">
+                        <div class="season-header">
+                            <h3>Mavsum 25 - Conqueror</h3>
+                            <div class="tier-badge">
+                                <img src="https://via.placeholder.com/80x80/ff6b35/ffffff?text=CONQ" alt="Conqueror">
+                                <span>4,892 TP</span>
+                            </div>
+                        </div>
+                        <div class="stats-grid-detailed">
+                            <div class="stat-detail-card">
+                                <h4>Mavsum Ko'rsatkichlari</h4>
+                                <div class="stats-table">
+                                    <div class="stat-row">
+                                        <span class="stat-label">Mavsum kills:</span>
+                                        <span class="stat-value-text">2,847</span>
+                                    </div>
+                                    <div class="stat-row">
+                                        <span class="stat-label">Mavsum wins:</span>
+                                        <span class="stat-value-text">247</span>
+                                    </div>
+                                    <div class="stat-row">
+                                        <span class="stat-label">Win rate:</span>
+                                        <span class="stat-value-text">89%</span>
+                                    </div>
+                                    <div class="stat-row">
+                                        <span class="stat-label">K/D ratio:</span>
+                                        <span class="stat-value-text">4.8</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stat-detail-card">
+                                <h4>Reytinglar</h4>
+                                <div class="rankings">
+                                    <div class="rank-item">
+                                        <span class="rank-mode">Solo</span>
+                                        <span class="rank-position">#1 O'zbekiston</span>
+                                    </div>
+                                    <div class="rank-item">
+                                        <span class="rank-mode">Duo</span>
+                                        <span class="rank-position">#1 O'zbekiston</span>
+                                    </div>
+                                    <div class="rank-item">
+                                        <span class="rank-mode">Squad</span>
+                                        <span class="rank-position">#1 O'zbekiston</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="weapons">
+                    <div class="weapons-stats">
+                        <h3>Eng Ko'p Ishlatiladigan Qurollar</h3>
+                        <div class="weapon-grid">
+                            <div class="weapon-card">
+                                <img src="https://via.placeholder.com/100x60/1a1a1a/ff6b35?text=AKM" alt="AKM">
+                                <h4>AKM</h4>
+                                <div class="weapon-stats-detail">
+                                    <span>15,247 kills</span>
+                                    <span>68% headshot</span>
+                                    <span>847m max range</span>
+                                </div>
+                            </div>
+                            <div class="weapon-card">
+                                <img src="https://via.placeholder.com/100x60/1a1a1a/ff6b35?text=M416" alt="M416">
+                                <h4>M416</h4>
+                                <div class="weapon-stats-detail">
+                                    <span>12,847 kills</span>
+                                    <span>72% headshot</span>
+                                    <span>654m max range</span>
+                                </div>
+                            </div>
+                            <div class="weapon-card">
+                                <img src="https://via.placeholder.com/100x60/1a1a1a/ff6b35?text=AWM" alt="AWM">
+                                <h4>AWM</h4>
+                                <div class="weapon-stats-detail">
+                                    <span>8,247 kills</span>
+                                    <span>95% headshot</span>
+                                    <span>1,247m max range</span>
+                                </div>
+                            </div>
+                            <div class="weapon-card">
+                                <img src="https://via.placeholder.com/100x60/1a1a1a/ff6b35?text=KAR98" alt="Kar98k">
+                                <h4>Kar98k</h4>
+                                <div class="weapon-stats-detail">
+                                    <span>7,124 kills</span>
+                                    <span>89% headshot</span>
+                                    <span>987m max range</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="maps">
+                    <div class="maps-stats">
+                        <h3>Xaritalar bo'yicha Statistika</h3>
+                        <div class="map-grid">
+                            <div class="map-card">
+                                <img src="https://via.placeholder.com/300x200/1a1a1a/ff6b35?text=ERANGEL" alt="Erangel">
+                                <div class="map-info">
+                                    <h4>Erangel</h4>
+                                    <div class="map-stats-detail">
+                                        <span class="win-rate">89% Win Rate</span>
+                                        <span class="games">2,847 o'yin</span>
+                                        <span class="avg-kills">12.4 o'rtacha kill</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="map-card">
+                                <img src="https://via.placeholder.com/300x200/1a1a1a/ff6b35?text=SANHOK" alt="Sanhok">
+                                <div class="map-info">
+                                    <h4>Sanhok</h4>
+                                    <div class="map-stats-detail">
+                                        <span class="win-rate">85% Win Rate</span>
+                                        <span class="games">1,947 o'yin</span>
+                                        <span class="avg-kills">15.2 o'rtacha kill</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="map-card">
+                                <img src="https://via.placeholder.com/300x200/1a1a1a/ff6b35?text=MIRAMAR" alt="Miramar">
+                                <div class="map-info">
+                                    <h4>Miramar</h4>
+                                    <div class="map-stats-detail">
+                                        <span class="win-rate">82% Win Rate</span>
+                                        <span class="games">1,547 o'yin</span>
+                                        <span class="avg-kills">9.8 o'rtacha kill</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="map-card">
+                                <img src="https://via.placeholder.com/300x200/1a1a1a/ff6b35?text=VIKENDI" alt="Vikendi">
+                                <div class="map-info">
+                                    <h4>Vikendi</h4>
+                                    <div class="map-stats-detail">
+                                        <span class="win-rate">87% Win Rate</span>
+                                        <span class="games">1,247 o'yin</span>
+                                        <span class="avg-kills">11.6 o'rtacha kill</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="records">
+                    <div class="records-stats">
+                        <h3>Shaxsiy Rekordlar</h3>
+                        <div class="records-grid">
+                            <div class="record-card">
+                                <div class="record-icon">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <h4>Eng Ko'p Kill</h4>
+                                <span class="record-value">47</span>
+                                <span class="record-desc">Bitta o'yinda</span>
+                            </div>
+                            <div class="record-card">
+                                <div class="record-icon">
+                                    <i class="fas fa-crosshairs"></i>
+                                </div>
+                                <h4>Eng Uzun Kill</h4>
+                                <span class="record-value">1,247m</span>
+                                <span class="record-desc">AWM bilan</span>
+                            </div>
+                            <div class="record-card">
+                                <div class="record-icon">
+                                    <i class="fas fa-crown"></i>
+                                </div>
+                                <h4>Ketma-ket G'alabalar</h4>
+                                <span class="record-value">23</span>
+                                <span class="record-desc">Squad rejimida</span>
+                            </div>
+                            <div class="record-card">
+                                <div class="record-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <h4>Eng Tez G'alaba</h4>
+                                <span class="record-value">14:32</span>
+                                <span class="record-desc">Sanhok xaritasida</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>SHOXRUZ <span class="yakudza">YAKUDZA</span></h3>
+                    <p>Professional PUBG Player</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Bosh sahifa</a>
+                    <a href="about.html">Haqida</a>
+                    <a href="stats.html">Statistika</a>
+                    <a href="achievements.html">Yutuqlar</a>
+                    <a href="gallery.html">Galereya</a>
+                    <a href="contact.html">Aloqa</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-twitch"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shoxruz Yakudza. Barcha huquqlar himoyalangan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<script>
+// ADMIN ACCESS
+let adminClicks = 0;
+let adminTimer = null;
+
+document.addEventListener('DOMContentLoaded', function() {
+    const logo = document.getElementById('adminLogo');
+    if (logo) {
+        logo.addEventListener('click', function(e) {
+            e.preventDefault();
+            adminClicks++;
+            console.log('Logo clicked:', adminClicks);
+            
+            if (adminTimer) clearTimeout(adminTimer);
+            adminTimer = setTimeout(() => { adminClicks = 0; }, 3000);
+            
+            if (adminClicks >= 2) {
+                adminClicks = 0;
+                const password = prompt('Admin Panel\n\nParolni kiriting:');
+                if (password === 'yakudza2024') {
+                    const adminWin = window.open('admin.html', 'admin', 'width=1400,height=900,scrollbars=yes,resizable=yes');
+                    if (!adminWin) alert('Popup blocker o\'chirilganligini tekshiring!');
+                } else if (password !== null) {
+                    alert('Noto\'g\'ri parol!');
+                }
+            }
+        });
+    }
+});
+</script>

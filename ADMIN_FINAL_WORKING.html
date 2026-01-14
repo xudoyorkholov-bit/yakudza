@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ADMIN PANEL - ISHLAYDI</title>
+    <style>
+        body { 
+            background: #000; 
+            color: #fff; 
+            font-family: Arial; 
+            text-align: center; 
+            padding: 50px; 
+        }
+        .logo { 
+            background: #ff6b35; 
+            padding: 50px; 
+            margin: 30px auto; 
+            width: 300px; 
+            cursor: pointer; 
+            border-radius: 15px; 
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .logo:hover { 
+            background: #f7931e; 
+            transform: scale(1.1); 
+        }
+        .info { 
+            background: #333; 
+            padding: 20px; 
+            margin: 20px auto; 
+            width: 400px; 
+            border-radius: 10px; 
+        }
+        button { 
+            background: #ff6b35; 
+            color: white; 
+            border: none; 
+            padding: 15px 30px; 
+            margin: 10px; 
+            cursor: pointer; 
+            border-radius: 8px; 
+            font-size: 16px;
+        }
+        button:hover { 
+            background: #f7931e; 
+        }
+    </style>
+</head>
+<body>
+    <h1>🔐 ADMIN PANEL TEST</h1>
+    <h2>BU SAHIFA 100% ISHLAYDI</h2>
+    
+    <div class="logo" onclick="adminClick()">
+        SHOXRUZ YAKUDZA
+        <br><small>2 MARTA BOSING</small>
+    </div>
+    
+    <div class="info">
+        <h3>Bosish soni: <span id="count">0</span></h3>
+        <p id="status">Kutilmoqda...</p>
+    </div>
+    
+    <div class="info">
+        <button onclick="directAdmin()">TO'G'RIDAN-TO'G'RI ADMIN</button>
+        <br>
+        <button onclick="testPrompt()">PROMPT TEST</button>
+    </div>
+    
+    <div class="info">
+        <h3>PAROL: yakudza2024</h3>
+    </div>
+
+    <script>
+        let clicks = 0;
+        let timer = null;
+        
+        function adminClick() {
+            clicks++;
+            document.getElementById('count').textContent = clicks;
+            document.getElementById('status').textContent = clicks + ' marta bosildi';
+            
+            console.log('Logo bosildi:', clicks);
+            
+            if (timer) clearTimeout(timer);
+            timer = setTimeout(() => {
+                clicks = 0;
+                document.getElementById('count').textContent = '0';
+                document.getElementById('status').textContent = 'Timer tugadi';
+            }, 3000);
+            
+            if (clicks >= 2) {
+                clicks = 0;
+                document.getElementById('count').textContent = '0';
+                document.getElementById('status').textContent = 'Admin panel ochilmoqda...';
+                
+                const password = prompt('ADMIN PANEL\\n\\nParolni kiriting:');
+                
+                if (password === 'yakudza2024') {
+                    document.getElementById('status').textContent = 'Parol to\\'g\\'ri! Ochilmoqda...';
+                    
+                    const win = window.open('admin.html', 'admin', 'width=1400,height=900');
+                    
+                    if (win) {
+                        document.getElementById('status').textContent = '✅ ADMIN PANEL OCHILDI!';
+                    } else {
+                        document.getElementById('status').textContent = '❌ POPUP BLOCKER!';
+                    }
+                } else if (password !== null) {
+                    document.getElementById('status').textContent = '❌ NOTO\\'G\\'RI PAROL!';
+                } else {
+                    document.getElementById('status').textContent = 'Bekor qilindi';
+                }
+            }
+        }
+        
+        function directAdmin() {
+            document.getElementById('status').textContent = 'To\\'g\\'ridan-to\\'g\\'ri ochilmoqda...';
+            
+            const win = window.open('admin.html', 'admin', 'width=1400,height=900');
+            
+            if (win) {
+                document.getElementById('status').textContent = '✅ ADMIN PANEL OCHILDI!';
+            } else {
+                document.getElementById('status').textContent = '❌ POPUP BLOCKER! F12 → Console → window.open(\\'admin.html\\')';
+            }
+        }
+        
+        function testPrompt() {
+            const test = prompt('PROMPT TEST\\n\\nBu yerga \\'ok\\' yozing:');
+            
+            if (test === 'ok') {
+                document.getElementById('status').textContent = '✅ PROMPT ISHLAYDI!';
+            } else {
+                document.getElementById('status').textContent = '❌ PROMPT ISHLAMAYDI!';
+            }
+        }
+        
+        console.log('🚀 ADMIN PANEL TEST YUKLANDI');
+        console.log('LOGO USTIGA 2 MARTA BOSING');
+        console.log('PAROL: yakudza2024');
+    </script>
+</body>
+</html>

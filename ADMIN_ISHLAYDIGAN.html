@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ADMIN PANEL</title>
+    <style>
+        body { 
+            background: #000; 
+            color: #fff; 
+            font-family: Arial; 
+            text-align: center; 
+            padding: 20px; 
+        }
+        .admin-btn { 
+            background: #ff6b35; 
+            color: white; 
+            border: none; 
+            padding: 20px 40px; 
+            margin: 20px; 
+            cursor: pointer; 
+            border-radius: 10px; 
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .admin-btn:hover { 
+            background: #f7931e; 
+        }
+    </style>
+</head>
+<body>
+    <h1>ADMIN PANEL OCHISH</h1>
+    
+    <button class="admin-btn" onclick="openAdmin()">
+        ADMIN PANEL OCHISH
+    </button>
+    
+    <br><br>
+    
+    <button class="admin-btn" onclick="testAdmin()">
+        PAROL BILAN OCHISH
+    </button>
+    
+    <br><br>
+    
+    <p>Parol: yakudza2024</p>
+
+    <script>
+        function openAdmin() {
+            window.open('admin.html', 'admin', 'width=1400,height=900');
+        }
+        
+        function testAdmin() {
+            const p = prompt('Parol kiriting:');
+            if (p === 'yakudza2024') {
+                window.open('admin.html', 'admin', 'width=1400,height=900');
+            } else {
+                alert('Noto\'g\'ri parol!');
+            }
+        }
+    </script>
+</body>
+</html>

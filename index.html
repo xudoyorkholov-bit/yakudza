@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoxruz Yakudza - PUBG Pro Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo" style="cursor: pointer; background: red; padding: 10px;" onclick="
+                alert('Logo bosildi!');
+                var p = prompt('Admin Panel Parol:');
+                if (p === 'yakudza2024') {
+                    window.open('admin.html', '_blank', 'width=1400,height=900');
+                } else {
+                    alert('Noto\\'g\\'ri parol!');
+                }
+            ">
+                <h2>SHOXRUZ <span class="yakudza">YAKUDZA</span></h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Bosh sahifa</a></li>
+                <li><a href="about.html">Haqida</a></li>
+                <li><a href="stats.html">Statistika</a></li>
+                <li><a href="achievements.html">Yutuqlar</a></li>
+                <li><a href="gallery.html">Galereya</a></li>
+                <li><a href="contact.html">Aloqa</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="glitch" data-text="SHOXRUZ">SHOXRUZ</span>
+                    <span class="yakudza-title">YAKUDZA</span>
+                </h1>
+                <p class="hero-subtitle">Professional PUBG Player & Content Creator</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2.5M+</span>
+                        <span class="stat-label">Kills</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">85%</span>
+                        <span class="stat-label">Win Rate</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1500+</span>
+                        <span class="stat-label">Chicken Dinners</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="stats.html" class="btn btn-primary">Statistikani ko'rish</a>
+                    <a href="contact.html" class="btn btn-secondary">Aloqa</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="about-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Haqimda</h2>
+                <p class="section-subtitle">Professional PUBG oyinchisi va kontent yaratuvchi</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=500&fit=crop&crop=face" alt="Shoxruz Yakudza">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="about-text">
+                    <h3>Shoxruz "Yakudza" Karimov</h3>
+                    <p class="about-description">
+                        Men 5 yildan ortiq vaqtdan beri professional PUBG o'ynayman. O'zbekistondagi eng yaxshi o'yinchilardan biri sifatida tanilganman va ko'plab xalqaro turnirlardan g'olib chiqqanman.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-trophy"></i>
+                            <span>50+ Tournament Wins</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-medal"></i>
+                            <span>Top 1 O'zbekiston</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-users"></i>
+                            <span>500K+ Followers</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-gamepad"></i>
+                            <span>5+ Years Experience</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitch"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="about.html" class="btn btn-primary">Batafsil</a>
+                        <a href="contact.html" class="btn btn-secondary">Bog'lanish</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="quick-stats-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">O'yin Statistikasi</h2>
+                <p class="section-subtitle">Professional darajadagi ko'rsatkichlar</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 class="stat-value" data-target="2547892">0</h3>
+                        <p class="stat-name">Jami Kills</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 class="stat-value" data-target="1547">0</h3>
+                        <p class="stat-name">Chicken Dinners</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 class="stat-value" data-target="87">0</h3>
+                        <p class="stat-name">Win Rate %</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 class="stat-value" data-target="4.2">0</h3>
+                        <p class="stat-name">K/D Ratio</p>
+                    </div>
+                </div>
+            </div>
+            <div class="stats-cta">
+                <a href="stats.html" class="btn btn-primary">To'liq Statistika</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Achievements -->
+    <section class="latest-achievements">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">So'nggi Yutuqlar</h2>
+                <p class="section-subtitle">Eng muhim g'alabalar</p>
+            </div>
+            <div class="achievements-preview">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>PUBG Mobile World Championship</h3>
+                    <p class="achievement-year">2023</p>
+                    <p class="achievement-desc">Jahon chempionati 1-o'rin</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Asia Pacific Championship</h3>
+                    <p class="achievement-year">2023</p>
+                    <p class="achievement-desc">Osiyo-Tinch okeani chempioni</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>O'zbekiston Milliy Chempionati</h3>
+                    <p class="achievement-year">2022-2023</p>
+                    <p class="achievement-desc">3 marta ketma-ket chempion</p>
+                </div>
+            </div>
+            <div class="achievements-cta">
+                <a href="achievements.html" class="btn btn-primary">Barcha Yutuqlar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Preview -->
+    <section class="gallery-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Galereya</h2>
+                <p class="section-subtitle">Eng yaxshi daqiqalar</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=300&fit=crop" alt="Chicken Dinner">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=300&fit=crop" alt="Epic Kill">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=400&h=300&fit=crop" alt="Squad Win">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&h=300&fit=crop" alt="Sniper Shot">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-cta">
+                <a href="gallery.html" class="btn btn-primary">Barcha Media</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>SHOXRUZ <span class="yakudza">YAKUDZA</span></h3>
+                    <p>Professional PUBG Player</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Bosh sahifa</a>
+                    <a href="about.html">Haqida</a>
+                    <a href="stats.html">Statistika</a>
+                    <a href="achievements.html">Yutuqlar</a>
+                    <a href="gallery.html">Galereya</a>
+                    <a href="contact.html">Aloqa</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-twitch"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shoxruz Yakudza. Barcha huquqlar himoyalangan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        console.log('Admin ready: Logo 2x click, Password: yakudza2024');
+        window.testAdmin = () => {
+            const p = prompt('Test Admin\\nParol:');
+            if (p === 'yakudza2024') window.open('admin.html', 'admin', 'width=1400,height=900');
+        };
+    </script>
+</body>
+</html>

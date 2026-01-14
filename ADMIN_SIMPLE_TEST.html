@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Test</title>
+    <style>
+        body { background: #000; color: #fff; font-family: Arial; padding: 20px; text-align: center; }
+        .logo { background: #ff6b35; padding: 30px; margin: 20px; cursor: pointer; border-radius: 10px; }
+        .info { background: #333; padding: 20px; margin: 10px; border-radius: 5px; }
+        button { background: #ff6b35; color: white; border: none; padding: 10px 20px; margin: 5px; cursor: pointer; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>🔐 ADMIN PANEL TEST</h1>
+    
+    <div class="info">
+        <h3>Test 1: Bu logoni 2 marta bosing</h3>
+        <div class="logo" id="testLogo">
+            <h2>SHOXRUZ YAKUDZA</h2>
+            <p>2 marta bosing</p>
+        </div>
+        <div>Bosish soni: <span id="count">0</span></div>
+    </div>
+
+    <div class="info">
+        <h3>Test 2: Tugmalar</h3>
+        <button onclick="directTest()">To'g'ridan-to'g'ri Admin</button>
+        <button onclick="promptTest()">Prompt Test</button>
+        <button onclick="consoleTest()">Console Test</button>
+    </div>
+
+    <div class="info">
+        <h3>Test 3: Asosiy sahifa</h3>
+        <button onclick="window.open('index.html')">index.html ni ochish</button>
+    </div>
+
+    <script>
+        let clicks = 0;
+        let timer = null;
+
+        document.getElementById('testLogo').addEventListener('click', function() {
+            clicks++;
+            document.getElementById('count').textContent = clicks;
+            console.log('Logo bosildi:', clicks);
+            
+            if (timer) clearTimeout(timer);
+            timer = setTimeout(() => { clicks = 0; document.getElementById('count').textContent = '0'; }, 3000);
+            
+            if (clicks >= 2) {
+                clicks = 0;
+                document.getElementById('count').textContent = '0';
+                
+                const password = prompt('Admin Panel\\n\\nParolni kiriting:');
+                if (password === 'yakudza2024') {
+                    alert('✅ Parol to\\'g\\'ri! Admin panel ochilmoqda...');
+                    const win = window.open('admin.html', 'admin', 'width=1400,height=900');
+                    if (!win) alert('❌ Popup blocker!');
+                } else if (password !== null) {
+                    alert('❌ Noto\\'g\\'ri parol!');
+                }
+            }
+        });
+
+        function directTest() {
+            const win = window.open('admin.html', 'admin', 'width=1400,height=900');
+            if (win) {
+                alert('✅ Admin panel ochildi!');
+            } else {
+                alert('❌ Popup blocker admin panelni to\\'sib qo\\'ydi!');
+            }
+        }
+
+        function promptTest() {
+            const password = prompt('Test prompt:\\n\\nParolni kiriting:');
+            if (password === 'yakudza2024') {
+                alert('✅ Prompt ishlaydi!');
+            } else {
+                alert('❌ Prompt ishlamaydi yoki noto\\'g\\'ri parol');
+            }
+        }
+
+        function consoleTest() {
+            console.log('Console test - bu xabar console da ko\\'rinishi kerak');
+            alert('Console da xabar yuborildi. F12 bosib tekshiring.');
+        }
+
+        console.log('🚀 Admin test sahifa yuklandi');
+        console.log('Logo ustiga 2 marta bosing yoki tugmalarni sinab ko\\'ring');
+    </script>
+</body>
+</html>

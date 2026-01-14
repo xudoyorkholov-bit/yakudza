@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aloqa - Shoxruz Yakudza</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo" id="adminLogo" style="cursor: pointer; user-select: none;" title="Admin Panel uchun 2 marta bosing">
+                <h2>SHOXRUZ <span class="yakudza">YAKUDZA</span></h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Bosh sahifa</a></li>
+                <li><a href="about.html">Haqida</a></li>
+                <li><a href="stats.html">Statistika</a></li>
+                <li><a href="achievements.html">Yutuqlar</a></li>
+                <li><a href="gallery.html">Galereya</a></li>
+                <li><a href="contact.html" class="active">Aloqa</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">
+                <span class="glitch" data-text="ALOQA">ALOQA</span>
+            </h1>
+            <p class="page-subtitle">Hamkorlik va sponsorlik uchun bog'laning</p>
+        </div>
+    </section>
+
+    <!-- Contact Main -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info-section">
+                    <h2>Bog'lanish Ma'lumotlari</h2>
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <p>shoxruz.yakudza@gmail.com</p>
+                                <span>Business inquiries</span>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Telefon</h3>
+                                <p>+998 90 123 45 67</p>
+                                <span>Sponsorship & partnerships</span>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Manzil</h3>
+                                <p>Toshkent, O'zbekiston</p>
+                                <span>Gaming headquarters</span>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Ish Vaqti</h3>
+                                <p>Dush-Juma: 10:00-18:00</p>
+                                <span>Response time: 24 hours</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <h2>Xabar Yuborish</h2>
+                    <form class="contact-form-main">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Ism</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Familiya</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Manzil</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon Raqam</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Mavzu</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Mavzuni tanlang</option>
+                                <option value="sponsorship">Sponsorlik</option>
+                                <option value="collaboration">Hamkorlik</option>
+                                <option value="interview">Intervyu</option>
+                                <option value="coaching">Coaching</option>
+                                <option value="other">Boshqa</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Xabar</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Xabaringizni bu yerga yozing..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Xabar Yuborish
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media -->
+    <section class="social-media-section">
+        <div class="container">
+            <h2 class="section-title">Ijtimoiy Tarmoqlar</h2>
+            <div class="social-grid">
+                <a href="#" class="social-platform">
+                    <div class="platform-icon youtube">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <div class="platform-info">
+                        <h3>YouTube</h3>
+                        <p>850K Subscribers</p>
+                        <span>Gaming content & tutorials</span>
+                    </div>
+                    <div class="platform-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                <a href="#" class="social-platform">
+                    <div class="platform-icon twitch">
+                        <i class="fab fa-twitch"></i>
+                    </div>
+                    <div class="platform-info">
+                        <h3>Twitch</h3>
+                        <p>450K Followers</p>
+                        <span>Live streaming daily</span>
+                    </div>
+                    <div class="platform-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                <a href="#" class="social-platform">
+                    <div class="platform-icon instagram">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="platform-info">
+                        <h3>Instagram</h3>
+                        <p>1.2M Followers</p>
+                        <span>Behind the scenes content</span>
+                    </div>
+                    <div class="platform-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                <a href="#" class="social-platform">
+                    <div class="platform-icon telegram">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <div class="platform-info">
+                        <h3>Telegram</h3>
+                        <p>300K Members</p>
+                        <span>Exclusive updates & tips</span>
+                    </div>
+                    <div class="platform-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Tez-tez So'raladigan Savollar</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Sponsorlik uchun qanday bog'lanishim mumkin?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sponsorlik bo'yicha takliflar uchun shoxruz.yakudza@gmail.com manziliga yozing yoki yuqoridagi formadan foydalaning. Barcha takliflarni ko'rib chiqamiz.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Coaching xizmatlari mavjudmi?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ha, individual va guruh coaching xizmatlari mavjud. Batafsil ma'lumot uchun bog'laning.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Intervyu uchun qanday ariza berishim mumkin?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Media va intervyu so'rovlari uchun email orqali bog'laning. Mavzu qismida "Intervyu" ni tanlang.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Turnir takliflarini qabul qilasizmi?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Professional turnir takliflarini doimo ko'rib chiqamiz. Turnir tafsilotlari bilan bog'laning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>SHOXRUZ <span class="yakudza">YAKUDZA</span></h3>
+                    <p>Professional PUBG Player</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Bosh sahifa</a>
+                    <a href="about.html">Haqida</a>
+                    <a href="stats.html">Statistika</a>
+                    <a href="achievements.html">Yutuqlar</a>
+                    <a href="gallery.html">Galereya</a>
+                    <a href="contact.html">Aloqa</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-twitch"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shoxruz Yakudza. Barcha huquqlar himoyalangan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<script>
+// ADMIN ACCESS
+let adminClicks = 0;
+let adminTimer = null;
+
+document.addEventListener('DOMContentLoaded', function() {
+    const logo = document.getElementById('adminLogo');
+    if (logo) {
+        logo.addEventListener('click', function(e) {
+            e.preventDefault();
+            adminClicks++;
+            console.log('Logo clicked:', adminClicks);
+            
+            if (adminTimer) clearTimeout(adminTimer);
+            adminTimer = setTimeout(() => { adminClicks = 0; }, 3000);
+            
+            if (adminClicks >= 2) {
+                adminClicks = 0;
+                const password = prompt('Admin Panel\n\nParolni kiriting:');
+                if (password === 'yakudza2024') {
+                    const adminWin = window.open('admin.html', 'admin', 'width=1400,height=900,scrollbars=yes,resizable=yes');
+                    if (!adminWin) alert('Popup blocker o\'chirilganligini tekshiring!');
+                } else if (password !== null) {
+                    alert('Noto\'g\'ri parol!');
+                }
+            }
+        });
+    }
+});
+</script>

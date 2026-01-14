@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1a1a;
+            color: white;
+            padding: 20px;
+        }
+        .test-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #2a2a2a;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #ff6b35;
+        }
+        .logo-test {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .logo-test:hover {
+            transform: scale(1.05);
+        }
+        .info {
+            background: rgba(255, 107, 53, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        .btn {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+        #clickCount {
+            font-size: 1.2rem;
+            color: #ff6b35;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1><i class="fas fa-shield-alt"></i> Admin Panel Test</h1>
+        
+        <div class="info">
+            <h3>📋 Test Qo'llanmasi:</h3>
+            <p>1. Quyidagi logoni <strong>2 marta</strong> bosing</p>
+            <p>2. Admin login oynasi ochilishi kerak</p>
+            <p>3. Parol: <code>yakudza2024</code></p>
+        </div>
+
+        <div class="logo-test" onclick="checkAdminAccess()">
+            <h2>SHOXRUZ <span style="color: #fff;">YAKUDZA</span></h2>
+            <p>Bu yerga 2 marta bosing</p>
+        </div>
+
+        <div class="info">
+            <p><strong>Bosish soni:</strong> <span id="clickCount">0</span></p>
+            <p><strong>Holat:</strong> <span id="status">Kutilmoqda...</span></p>
+        </div>
+
+        <div>
+            <button class="btn" onclick="testDirect()">
+                <i class="fas fa-rocket"></i> To'g'ridan-to'g'ri Test
+            </button>
+            <button class="btn" onclick="openAdminDirect()">
+                <i class="fas fa-external-link-alt"></i> Admin Panel Ochish
+            </button>
+            <button class="btn" onclick="resetTest()">
+                <i class="fas fa-refresh"></i> Reset
+            </button>
+        </div>
+
+        <div class="info">
+            <h4>🔧 Debug Ma'lumotlari:</h4>
+            <p><strong>JavaScript:</strong> <span id="jsStatus">Tekshirilmoqda...</span></p>
+            <p><strong>Functions:</strong> <span id="funcStatus">Tekshirilmoqda...</span></p>
+            <p><strong>Console:</strong> F12 bosib console ni tekshiring</p>
+        </div>
+    </div>
+
+    <script>
+        // Admin Panel Access
+        let adminClickCount = 0;
+        let adminClickTimer = null;
+
+        function checkAdminAccess() {
+            adminClickCount++;
+            document.getElementById('clickCount').textContent = adminClickCount;
+            document.getElementById('status').textContent = `${adminClickCount} marta bosildi`;
+            
+            console.log('Logo bosildi:', adminClickCount);
+            
+            // Reset counter after 3 seconds
+            if (adminClickTimer) {
+                clearTimeout(adminClickTimer);
+            }
+            
+            adminClickTimer = setTimeout(() => {
+                adminClickCount = 0;
+                document.getElementById('clickCount').textContent = '0';
+                document.getElementById('status').textContent = 'Timer reset bo\'ldi';
+            }, 3000);
+            
+            // If clicked 2 times within 3 seconds, show admin login
+            if (adminClickCount >= 2) {
+                adminClickCount = 0;
+                document.getElementById('status').textContent = 'Admin login ochilmoqda...';
+                showAdminLogin();
+            }
+        }
+
+        function showAdminLogin() {
+            console.log('showAdminLogin chaqirildi');
+            
+            // Create custom modal
+            const modal = document.createElement('div');
+            modal.className = 'admin-login-modal';
+            modal.innerHTML = `
+                <div class="admin-login-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000;"></div>
+                <div class="admin-login-container" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #2a2a2a; padding: 30px; border-radius: 15px; border: 1px solid #ff6b35; z-index: 10001; min-width: 300px;">
+                    <div class="admin-login-header" style="text-align: center; margin-bottom: 20px;">
+                        <i class="fas fa-shield-alt" style="font-size: 2rem; color: #ff6b35; margin-bottom: 10px; display: block;"></i>
+                        <h3 style="color: white; margin: 0;">ADMIN PANEL</h3>
+                        <p style="color: #ccc; margin: 5px 0;">Parolni kiriting</p>
+                    </div>
+                    <div class="admin-login-form">
+                        <div style="margin-bottom: 20px;">
+                            <input type="password" id="adminPassword" placeholder="Parolni kiriting..." style="width: 100%; padding: 12px; background: rgba(255,255,255,0.1); border: 1px solid #ff6b35; border-radius: 8px; color: white; box-sizing: border-box;">
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <button onclick="verifyAdminPassword()" style="flex: 1; padding: 12px; background: linear-gradient(135deg, #ff6b35, #f7931e); color: white; border: none; border-radius: 8px; cursor: pointer;">
+                                <i class="fas fa-sign-in-alt"></i> Kirish
+                            </button>
+                            <button onclick="closeAdminLogin()" style="flex: 1; padding: 12px; background: rgba(255,255,255,0.1); color: white; border: 1px solid #ccc; border-radius: 8px; cursor: pointer;">
+                                <i class="fas fa-times"></i> Bekor qilish
+                            </button>
+                        </div>
+                        <div style="text-align: center; margin-top: 15px;">
+                            <small style="color: #888;">Demo: yakudza2024</small>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Focus on password input
+            setTimeout(() => {
+                document.getElementById('adminPassword').focus();
+            }, 100);
+            
+            // Handle Enter key
+            document.getElementById('adminPassword').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    verifyAdminPassword();
+                }
+            });
+            
+            // Close on overlay click
+            modal.querySelector('.admin-login-overlay').addEventListener('click', closeAdminLogin);
+        }
+
+        function verifyAdminPassword() {
+            const password = document.getElementById('adminPassword').value;
+            console.log('Parol tekshirilmoqda:', password);
+            
+            if (password === 'yakudza2024') {
+                alert('✅ Parol to\'g\'ri! Admin panel ochilmoqda...');
+                
+                const adminWindow = window.open('admin.html', 'adminPanel', 'width=1400,height=900,scrollbars=yes,resizable=yes');
+                
+                if (adminWindow) {
+                    alert('✅ Admin panel muvaffaqiyatli ochildi!');
+                    closeAdminLogin();
+                } else {
+                    alert('❌ Admin panel ochilmadi! Popup blocker tekshiring.');
+                }
+            } else {
+                alert('❌ Noto\'g\'ri parol! Qaytadan urinib ko\'ring.');
+                document.getElementById('adminPassword').value = '';
+                document.getElementById('adminPassword').focus();
+            }
+        }
+
+        function closeAdminLogin() {
+            const modal = document.querySelector('.admin-login-modal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+
+        function testDirect() {
+            console.log('To\'g\'ridan-to\'g\'ri test');
+            showAdminLogin();
+        }
+
+        function openAdminDirect() {
+            window.open('admin.html', 'adminPanel', 'width=1400,height=900,scrollbars=yes,resizable=yes');
+        }
+
+        function resetTest() {
+            adminClickCount = 0;
+            document.getElementById('clickCount').textContent = '0';
+            document.getElementById('status').textContent = 'Reset qilindi';
+            if (adminClickTimer) {
+                clearTimeout(adminClickTimer);
+            }
+        }
+
+        // Check JavaScript status
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('jsStatus').textContent = '✅ Ishlayapti';
+            
+            // Check if functions exist
+            const functions = ['checkAdminAccess', 'showAdminLogin', 'verifyAdminPassword'];
+            const funcResults = functions.map(func => {
+                return typeof window[func] === 'function' ? `✅ ${func}` : `❌ ${func}`;
+            });
+            document.getElementById('funcStatus').innerHTML = funcResults.join('<br>');
+            
+            console.log('Test sahifa yuklandi');
+            console.log('Admin functions:', {
+                checkAdminAccess: typeof checkAdminAccess,
+                showAdminLogin: typeof showAdminLogin,
+                verifyAdminPassword: typeof verifyAdminPassword
+            });
+        });
+    </script>
+</body>
+</html>
